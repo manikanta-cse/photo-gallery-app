@@ -1,0 +1,22 @@
+{
+  "name": "photo-gallery-app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "start":"node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/manikanta-cse/photo-gallery-app.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/manikanta-cse/photo-gallery-app/issues"
+  },
+  "homepage": "https://github.com/manikanta-cse/photo-gallery-app#readme",
+  "dependencies": {
+    "express": "^4.16.3"
+  }
+}
