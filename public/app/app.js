@@ -1,7 +1,7 @@
 
 (function () {
     
-        angular.module('photo-gallery', ['ngRoute'])
+        angular.module('photo-gallery', ['ngRoute','infinite-scroll'])
         .config(configure);
     
         function configure($routeProvider, $locationProvider) {
@@ -10,7 +10,7 @@
     
             $routeProvider.when('/home', {
     
-                templateUrl: '/app/views/home.html',
+                templateUrl: '/app/home.html',
                 controller: 'homeCtrl'            
     
             }).otherwise({
