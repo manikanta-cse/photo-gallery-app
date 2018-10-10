@@ -19,12 +19,13 @@
         }
 
 
-        function getGallery(page, per_page) {
+        function getGallery(searchText,page, per_page) {
 
             var galleryVm = [];
             var defered = $q.defer();
+            searchText = searchText || "dogs";
 
-            photoService.getPhotos("dogs", page, per_page).then(function (response) {
+            photoService.getPhotos(searchText, page, per_page).then(function (response) {
 
                 var photos = response["photos"]!=null ? response["photos"]["photo"] : null;
                 if(!photos)

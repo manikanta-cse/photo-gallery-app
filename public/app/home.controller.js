@@ -8,6 +8,10 @@
 
         $scope.isLoading = true;
 
+        $scope.search= function(searchText){
+            getGallery(searchText.trim(),page, per_page, onError)
+        };
+
         $scope.loadMore = function () {
             page++;
             if (page > 10) {
@@ -17,8 +21,8 @@
 
         };
 
-        function getGallery(page, per_page, errFn) {
-            galleryModel.getGallery(page, per_page).then(function (response) {
+        function getGallery(searchText,page, per_page, errFn) {
+            galleryModel.getGallery(searchText,page, per_page).then(function (response) {
                 $scope.isLoading = false;
                 $scope.images = response;
                 console.log(response);
@@ -32,7 +36,7 @@
         }
 
         (function () {
-            getGallery(page, per_page)
+            getGallery(null,page, per_page,onError)
 
         })(page, per_page, onError);
 

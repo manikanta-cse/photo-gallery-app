@@ -1,3 +1,14 @@
+<section class="jumbotron text-center">
+    <div class="container">    
+        <div class="input-group">
+            <input type="text" class="form-control" ng-model="searchText" placeholder="your search text here please" aria-describedby="basic-addon2">
+            <div class="input-group-append">
+                <button class="btn btn-outline-secondary" type="button" ng-click="search(searchText)">Search</button>
+            </div>
+        </div>
+    </div>
+</section>
+
 <div class="album py-5 bg-light" infinite-scroll='loadMore()'>
     <div class="container">
         <div class="loader" ng-show="isLoading"></div>
