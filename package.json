@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
-  "scripts": {
-    "start": "node server.js"
+  "scripts": {    
+    "start": "browserify --entry public/app/app.js --outfile public/app/dist/app.js && node server.js"
   },
   "repository": {
     "type": "git",

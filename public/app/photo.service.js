@@ -1,32 +1,28 @@
-(function () {
+function photoService($http, $q) {
 
-    angular.module('photo-gallery').factory('photoService', photoService);
+    var baseUrl = "https://api.flickr.com/services/rest/";
+    var api_key = "ca40e616229de82be37196790ccb4603";
 
-    function photoService($http, $q) {
+    var getPhotos = function (text, page, per_page) {
 
-        var baseUrl = "https://api.flickr.com/services/rest/";
-        var api_key = "ca40e616229de82be37196790ccb4603";   
+        var defered = $q.defer();
 
-        var getPhotos = function (text, page, per_page) {
+        $http.get(baseUrl + "?method=flickr.photos.search&api_key=" + api_key + "&text= " + text + "&page=" + page + "&per_page=" + per_page + "&extras=url_s,description,owner_name,date_taken&content_type=1&format=json&nojsoncallback=1").then(function (response) {
 
-            var defered = $q.defer();
+            defered.resolve(response.data);
 
-            $http.get(baseUrl + "?method=flickr.photos.search&api_key=" + api_key + "&text= " + text + "&page=" + page + "&per_page=" + per_page + "&extras=url_s,description,owner_name,date_taken&content_type=1&format=json&nojsoncallback=1").then(function (response) {
+        }, function (error) {
+            defered.reject(error.data);
+        });
 
-                defered.resolve(response.data);
+        return defered.promise;
+    };
 
-            }, function (error) {
-                defered.reject(error.data);
-            });
+    return {
+        getPhotos: getPhotos
 
-            return defered.promise;
-        };
-
-        return {
-            getPhotos: getPhotos
-
-        }
     }
+}
 
-})();
+module.exports = photoService;
 
