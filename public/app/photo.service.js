@@ -11,7 +11,7 @@
 
             var defered = $q.defer();
 
-            $http.get(baseUrl + "?method=flickr.photos.search&api_key=" + api_key + "&text= " + text + "&page=" + page + "&per_page=" + per_page + "&extras=url_s,description,owner_name,date_taken&format=json&nojsoncallback=1").then(function (response) {
+            $http.get(baseUrl + "?method=flickr.photos.search&api_key=" + api_key + "&text= " + text + "&page=" + page + "&per_page=" + per_page + "&extras=url_s,description,owner_name,date_taken&content_type=1&format=json&nojsoncallback=1").then(function (response) {
 
                 defered.resolve(response.data);
 
