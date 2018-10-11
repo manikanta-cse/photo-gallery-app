@@ -1,35 +1,38 @@
 <section class="jumbotron text-center">
-    <div class="container">    
-        <div class="input-group">
-            <input type="text" class="form-control" ng-model="searchText" placeholder="your search text here please" aria-describedby="basic-addon2">
-            <div class="input-group-append">
-                <button class="btn btn-outline-secondary" type="button" ng-click="search(searchText)">Search</button>
+    <div class="container">
+        <form ng-submit="search(searchText)">
+            <div class="input-group">
+                <input type="text" class="form-control" ng-model="searchText" required placeholder="your search text here please" aria-describedby="basic-addon2">
+                <div class="input-group-append">
+                    <button class="btn btn-outline-secondary" type="submit">Search</button>
+                </div>
             </div>
-        </div>
+        </form>
     </div>
 </section>
+<div id="container">
+    <div class="album py-5 bg-light" infinite-scroll='loadMore()' infinite-scroll-distance='2' infinite-scroll-parent='true'
+        infinite-scroll-container="'#container'">
+        <div class="container">
+            <div class="loader" ng-show="isLoading"></div>
 
-<div class="album py-5 bg-light" infinite-scroll='loadMore()'>
-    <div class="container">
-        <div class="loader" ng-show="isLoading"></div>
+            <div class="row" ng-show="!isLoading">
 
-        <div class="row" ng-show="!isLoading">
-
-            <div class="col-md-4" ng-repeat="image in images">
-                <div class="card mb-4 box-shadow" style="width: 20rem; height: 20rem;">
-                    <img ng-src="{{image.photo_url}}" alt="{{image.title}}">
-                    <div class="card-body">
-                        <p class="card-text" ng-bind="image.description">.</p>
-                        <div class="d-flex justify-content-between align-items-center">
-                            <small class="text-muted" ng-bind="image.author"></small>
-                            <small class="text-muted" ng-bind="image.date_taken"></small>
+                <div class="col-md-4" ng-repeat="image in images">
+                    <div class="card mb-4 box-shadow" style="width: 20rem; height: 20rem;">
+                        <img ng-src="{{image.photo_url}}" alt="{{image.title}}">
+                        <div class="card-body">
+                            <p class="card-text" ng-bind="image.description">.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <small class="text-muted" ng-bind="image.author"></small>
+                                <small class="text-muted" ng-bind="image.date_taken"></small>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+
+
     </div>
-
-
-</div>
 </div>

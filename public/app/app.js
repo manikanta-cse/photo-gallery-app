@@ -12,9 +12,9 @@ var galleryModel = require('./gallery.model');
 
 angular.module('photo-gallery', ['ngRoute', 'infinite-scroll'])
     .config(configure)
-    .service('photoService', photoService)
+    .factory('photoService', photoService)
     .factory('notifierService', notifierService)
-    .service('galleryModel', galleryModel)
+    .factory('galleryModel', galleryModel)
     .controller('homeController', homeController)
 
 angular.module('photo-gallery').value('pgToastr', toastr);
