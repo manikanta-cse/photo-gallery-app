@@ -2,7 +2,9 @@
 
 var express = require('express');
 var app = express();
-var port = process.env.PORT || 8090;
+
+const PORT =  process.env.PORT || 8090;
+const HOST = '0.0.0.0';
 
 app.use(express.static('./public'));
 
@@ -15,7 +17,5 @@ app.get('/', function (req, res) {
 
 require('./server/routes')(app);
 
-
-var server = app.listen(port, function () {
-  console.log('Server started, listening on ' + port);
-})
+app.listen(PORT, HOST);
+console.log(`Server started , Running on http://${HOST}:${PORT}`);
