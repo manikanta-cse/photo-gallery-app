@@ -3,13 +3,11 @@
     "angular": "^1.7.5",
     "angular-route": "^1.7.5",
     "bootstrap": "^4.0.0",
-    "browserify": "^16.2.3",
     "jquery": "^3.3.1",
     "popper.js": "^1.12.9",
     "toastr": "^2.1.4"
   },
   "devDependencies": {
-    "browserify": "^16.2.3",
-    "watchify": "^3.11.0"
+    "browserify": "^16.2.3"
   }
 }
