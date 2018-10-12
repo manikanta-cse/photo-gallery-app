@@ -25,7 +25,7 @@ function configure($routeProvider, $locationProvider) {
 
     $routeProvider.when('/home', {
 
-        templateUrl: '/app/home.html',
+        templateUrl: '/app/views/home.html',
         controller: 'homeController'
 
     }).otherwise({
