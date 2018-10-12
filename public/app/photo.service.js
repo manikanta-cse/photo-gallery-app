@@ -1,17 +1,25 @@
 function photoService($http, $q) {
 
+    var cache_api_key = null;
 
     var getConfig = function () {
 
         var defered = $q.defer();
 
-        $http.get("/api/config").then(function (response) {
+        if (cache_api_key) {
+            defered.resolve(cache_api_key);
+        }
+        else {
+            $http.get("/api/config").then(function (response) {
 
-            defered.resolve(response.data);
+                cache_api_key = response.data;
+                defered.resolve(response.data);
 
-        }, function (error) {
-            defered.reject(error.data);
-        });
+            }, function (error) {
+                defered.reject(error.data);
+            });
+        }
+
 
         return defered.promise;
 
