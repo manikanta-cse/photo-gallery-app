@@ -8,10 +8,11 @@ var homeController = require('./home.controller');
 var photoService = require('./photo.service');
 var notifierService = require('./notifier.service');
 var galleryModel = require('./gallery.model');
+var configuration = require('./configuration')
 
 
 angular.module('photo-gallery', ['ngRoute', 'infinite-scroll'])
-    .config(configure)
+    .config(configuration)
     .factory('photoService', photoService)
     .factory('notifierService', notifierService)
     .factory('galleryModel', galleryModel)
@@ -19,17 +20,3 @@ angular.module('photo-gallery', ['ngRoute', 'infinite-scroll'])
 
 angular.module('photo-gallery').value('pgToastr', toastr);
 
-function configure($routeProvider, $locationProvider) {
-
-    $locationProvider.html5Mode(false).hashPrefix("");
-
-    $routeProvider.when('/home', {
-
-        templateUrl: '/app/views/home.html',
-        controller: 'homeController'
-
-    }).otherwise({
-        redirectTo: '/home'
-    });
-
-}
