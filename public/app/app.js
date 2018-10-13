@@ -1,4 +1,4 @@
-require("../lib/node_modules/jquery/dist/jquery.min");
+global.jQuery = require("../lib/node_modules/jquery/dist/jquery");
 var angular = require("../lib/node_modules/angular");
 require("../lib/node_modules/angular-route");
 var toastr = require("../lib/node_modules/toastr");
