@@ -8,7 +8,7 @@ function notifierService(pgToastr) {
             pgToastr.error(msg);
             console.error(err);
         }
-    }
+    };
 }
 
 module.exports = notifierService;

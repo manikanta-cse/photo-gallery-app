@@ -4,7 +4,7 @@
   "description": "",
   "main": "server.js",
   "scripts": {    
-    "start": "browserify --entry public/app/app.js --outfile public/app/dist/app.js && node server.js"
+    "start": "cd public/lib && gulp build && cd ../.. && node server.js"
   },
   "repository": {
     "type": "git",

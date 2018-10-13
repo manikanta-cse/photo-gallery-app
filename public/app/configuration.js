@@ -1,6 +1,6 @@
 function configure($routeProvider, $locationProvider) {
 
-    $locationProvider.html5Mode(false).hashPrefix("");
+    $locationProvider.html5Mode(false).hashPrefix('');
 
     $routeProvider.when('/home', {
 

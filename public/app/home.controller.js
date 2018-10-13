@@ -1,16 +1,18 @@
 function homeController($scope, photoService, galleryModel, notifierService) {
 
-    var page = 1, per_page = 10;
+    var page = 1, perPage = 10;
 
     $scope.isLoading = true;
-    
+
     $scope.images = [];
 
     $scope.search = function (searchText) {
-        if (!searchText) return;
+        if (!searchText) {
+            return;
+        }
         $scope.images = [];
         resetPage();
-        getGallery(searchText.trim(), page, per_page, onError)
+        getGallery(searchText.trim(), page, perPage, onError);
     };
 
     $scope.loadMore = function () {
@@ -18,12 +20,12 @@ function homeController($scope, photoService, galleryModel, notifierService) {
         if (page > 10) {
             return;   //loading only 102 images
         }
-        getGallery($scope.searchText || null, page, per_page, onError);
+        getGallery($scope.searchText || null, page, perPage, onError);
 
     };
 
-    function getGallery(searchText, page, per_page, errFn) {
-        galleryModel.getGallery(searchText, page, per_page).then(function (response) {
+    function getGallery(searchText, page, perPage, errFn) {
+        galleryModel.getGallery(searchText, page, perPage).then(function (response) {
             $scope.isLoading = false;
             $scope.images = $scope.images.concat(response);
         }, errFn);
@@ -32,7 +34,7 @@ function homeController($scope, photoService, galleryModel, notifierService) {
 
 
     function onError(reason) {
-        notifierService.error(reason, "Oops!..Something went wrong, please try again");
+        notifierService.error(reason, 'Oops!..Something went wrong, please try again');
     }
 
     function resetPage() {
@@ -40,12 +42,12 @@ function homeController($scope, photoService, galleryModel, notifierService) {
     }
 
     (function () {
-        getGallery(null, page, per_page, onError)
+        getGallery(null, page, perPage, onError);
 
-    })(page, per_page, onError);
+    })(page, perPage, onError);
 
-};
+}
 
-module.exports = homeController
+module.exports = homeController;
 
 

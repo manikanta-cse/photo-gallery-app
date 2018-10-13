@@ -19,12 +19,12 @@
 
             <div class="col-md-4" ng-repeat="image in images">
                 <div class="card mb-4 box-shadow">
-                    <img ng-src="{{image.photo_url}}" alt="{{image.title}}">
+                    <img ng-src="{{image.photoUrl}}" alt="{{image.title}}">
                     <div class="card-body">
                         <p class="card-text card-intro-text" ng-bind="image.description">.</p>
                         <div class="d-flex justify-content-between align-items-center">
                             <small class="text-muted" ng-bind="image.author"></small>
-                            <small class="text-muted" ng-bind="image.date_taken"></small>
+                            <small class="text-muted" ng-bind="image.dateTaken"></small>
                         </div>
                     </div>
                 </div>
