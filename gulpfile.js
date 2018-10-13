@@ -8,7 +8,7 @@ var uglify = require('gulp-uglify');
 
 // Style Dependencies
 var prefix = require('gulp-autoprefixer');
-var minifyCSS = require('gulp-minify-css');
+var minifyCSS = require('gulp-clean-css');
 
 // Development Dependencies
 var jshint = require('gulp-jshint');
