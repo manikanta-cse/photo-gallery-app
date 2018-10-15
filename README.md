@@ -9,6 +9,7 @@
 ### Notes
 
 - Choosen angular js to build front-end and node express web-server to serve the front-end
+- Added search feature, defaulted to "dogs" but you are allowed to search anything
 - Used common js format to load dependencies (used browserfiy to work in browser)
 - Choosen gulp as a task runner for executing bunch of taks like minification,bundling..
 - Insisted to set the enviromental variable for api key which provides better security
