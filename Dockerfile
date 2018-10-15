@@ -6,7 +6,7 @@ COPY ./ /src
 
 WORKDIR src/
 
-RUN npm install --global gulp-cli
+RUN npm install --global gulp-cli && npm link gulp
 
 RUN npm install && cd public/lib; npm install
 
