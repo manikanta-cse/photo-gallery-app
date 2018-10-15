@@ -24,7 +24,7 @@
 - Do a npm install on public/lib directoy which will install frontend packages
 - Install Gulp globally (npm install -g gulp-cli)
 - You need to set an enviromental variable (set FLICKR_API_KEY=YOUR_API_KEY), which will be used to fetch data from flickr 
-- Now it's time to run the project, do a npm start on the root directory, which will run the bunch of gulp task and opens    the application in your defalt browser
+- Now it's time to run the app, do a npm start on the root directory, which will run the bunch of gulp task and opens        the application in your defalt browser
 
 ### Instrutions to run on a Dokerized enviromenent
 
