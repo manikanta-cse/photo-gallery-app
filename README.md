@@ -2,8 +2,19 @@
 
 ## Tooling and Libraries Used
 - angular js
+- bootstrap
 - node express
 - docker
+
+### Notes
+
+- Choosen angular js to build front-end and node express web-server to serve the front-end
+- Used common js format to load dependencies (used browserfiy to work in browser)
+- Choosen gulp as a task runner for executing bunch of taks like minification,bundling..
+- Insisted to set the enviromental variable for api key which provides better security
+- Added a health endpoint which can be hooked up to a monitoring tool
+- Dockerized the application 
+
 
 ### Instrutions to run on local enviromenent 
 
