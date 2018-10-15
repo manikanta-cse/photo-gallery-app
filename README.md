@@ -14,7 +14,7 @@
 - Insisted to set the enviromental variable for api key which provides better security
 - Added a health endpoint which can be hooked up to a monitoring tool
 - Dockerized the application 
-
+- Error logging to console (for Dev)
 
 ### Instrutions to run on local enviromenent 
 
