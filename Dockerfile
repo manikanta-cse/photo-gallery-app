@@ -1,6 +1,6 @@
 FROM alpine:3.7
 
-RUN apk --update add --no-cache nodejs=6.10.1 && rm -rf /var/cache/apk/* 
+RUN apk --update add --no-cache nodejs && rm -rf /var/cache/apk/* 
 
 COPY ./ /src
 
