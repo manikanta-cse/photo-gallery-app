@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
-  "scripts": {    
-    "start": "cd public/lib && gulp build && cd ../.. && node server.js"
+  "scripts": {
+    "start": "gulp build && node server.js"    
   },
   "repository": {
     "type": "git",
@@ -16,8 +16,7 @@
     "url": "https://github.com/manikanta-cse/photo-gallery-app/issues"
   },
   "homepage": "https://github.com/manikanta-cse/photo-gallery-app#readme",
-  "dependencies": {   
-    "express": "^4.16.3"    
+  "dependencies": {
+    "express": "^4.16.3"
   }
-  
 }
