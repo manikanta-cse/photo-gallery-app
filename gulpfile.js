@@ -11,6 +11,7 @@ var concat = require('./public/lib/node_modules/gulp-concat');
 var prefix = require('./public/lib/node_modules/gulp-autoprefixer');
 var minifyCSS = require('./public/lib/node_modules/gulp-clean-css');
 
+
 // Development Dependencies
 var jshint = require('./public/lib/node_modules/gulp-jshint');
 var open = require('./public/lib/node_modules/gulp-open');
@@ -57,7 +58,7 @@ gulp.task('uglify', ['browserify-client'], function () {
 
 gulp.task('open', function () {
     gulp.src(__filename)
-        .pipe(open({ uri: 'http://localhost:8090' }));
+        .pipe(open({ uri: `http://localhost:${process.env.PORT || 8090}` }));
 });
 
 
