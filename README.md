@@ -30,5 +30,5 @@
 ### Instrutions to run on a Dokerized enviromenent
 
 - docker build -t photo-gallery-app .
-- docker run -d -p 8090:8090 -e FLICKR_API_KEY=YOUR_API_KEY gallery-app
+- docker run -d -p 8090:8090 -e FLICKR_API_KEY=YOUR_API_KEY photo-gallery-app
 
