@@ -17,7 +17,7 @@
 - Dockerized the application 
 - Error logging to console (for Dev)
 
-### Instrutions to run on local enviromenent 
+### Instructions to run on local enviromenent 
 
 - Clone the repo from https://github.com/manikanta-cse/photo-gallery-app.git or download the zipped solution
 - Developed using node(v6.10.1) npm (3.10.10) 
@@ -27,7 +27,7 @@
 - You need to set an enviromental variable (set FLICKR_API_KEY=YOUR_API_KEY), which will be used to fetch data from flickr 
 - Now it's time to run the app, do a npm start on the root directory, which will run the bunch of gulp task and opens        the application in your defalt browser
 
-### Instrutions to run on a Dokerized enviromenent
+### Instructions to run on a Dokerized enviromenent
 
 - docker build -t photo-gallery-app .
 - docker run -d -p 8090:8090 -e FLICKR_API_KEY=YOUR_API_KEY photo-gallery-app
